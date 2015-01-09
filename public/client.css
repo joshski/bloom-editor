@@ -1,0 +1,178 @@
+html, body {
+  overflow: hidden;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.header-frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 24px;
+  left: 0;
+  background-color: #DBDBDB;
+}
+
+.crumbtrail-frame {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  height: 36px;
+  left: 0;
+  background-color: #DBDBDB;
+  overflow: scroll;
+}
+
+.code-frame {
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  bottom: 0;
+  left: 0;
+  overflow: scroll;
+  padding: 10px;
+  padding-top: 20px;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.1em;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.navigation-frame {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: #efefef;
+  padding: 5px;
+}
+
+.code-frame div {
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.code-frame .line {
+  display: block;
+}
+.program, .function-declaration, .function-body {
+  display: block!important;
+}
+
+.code-frame .selected {
+  background-color: yellow;
+}
+
+.function-body {
+  padding-left: 1.2em;
+  margin-bottom: 1em;
+}
+.bracket {
+  color: #333;
+  display: inline-block;
+}
+.literal {
+  color: darkgreen;
+}
+.identifier {
+  color: #337799;
+}
+.identifier.empty {
+  color: #337799;
+  display: inline-block;
+  border-bottom: 2px solid orange;
+  width: 0.4em;
+}
+.function-name {
+  color: #553399;
+}
+.code-frame .blank-line {
+  display: block;
+  height: 1em;
+}
+
+
+.navigation-frame h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #888;
+}
+.navigation-frame ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation-frame li a {
+  display: block;
+  background-color: #ddd;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+.navigation-frame li a span.fa {
+  width: 16px;
+  margin-right: 4px;
+  text-align: center;
+  display: inline-block;
+}
+.navigation-frame .editor {
+  margin-bottom: 10px;
+}
+.navigation-frame .editor input[type='text'] {
+  width: 100%;
+  height: 29px;
+  text-indent: 6px;
+  font-size: 0.9em;
+  line-height: 0.9em;
+}
+.navigation-frame .editor label {
+  display: block;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 3px;
+  margin-left: 2px;
+}
+
+.whitespace {
+  display: inline-block;
+}
+
+.crumbtrail-frame .crumb {
+  display: inline-block;
+  font-size: 0.7em;
+  cursor: pointer;
+  background: #ccc;
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+.crumbtrail-frame .crumb .text {
+  display: inline;
+  color: #444;
+}
+.crumbtrail-frame .crumb:not(:first-child) {
+  margin-left: 5px;
+}
+.crumbtrail-frame .crumb:not(:first-child):before {
+  content: '► ';
+  color: #999;
+  font-size: 0.5em;
+}
+.crumbtrail {
+  padding: 6px;
+  padding-left: 8px;
+  white-space: nowrap;
+}
