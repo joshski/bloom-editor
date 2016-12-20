@@ -539,7 +539,8 @@ module.exports () =
             h 'ul' (
               commandsFor(model.selectedNode).map @(cmd)
                 h 'li' (
-                  h "a.#(cmd.name.toLowerCase().replace(' ', '-'))" {
+                  h 'a' {
+                    class = cmd.name.toLowerCase().replace(' ', '-')
                     href = "##(cmd.name)"
                     onclick (e) =
                       e.preventDefault()
