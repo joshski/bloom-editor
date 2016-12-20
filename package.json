@@ -25,7 +25,7 @@
     "express": "^4.10.6",
     "express-session": "^1.9.3",
     "fastclick": "^1.0.3",
-    "plastiq": "git://github.com/featurist/plastiq.git#update_dependencies",
+    "hyperdom": "^0.2.0",
     "pogo": "^0.9.6",
     "pogoify": "^0.1.1",
     "superagent": "^0.21.0",

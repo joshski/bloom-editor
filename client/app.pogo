@@ -1,6 +1,6 @@
 _ = require 'underscore'
-plastiq = require 'plastiq'
-h = plastiq.html
+hyperdom = require 'hyperdom'
+h = hyperdom.html
 hello = require './helloWorld'
 
 module.exports () =
@@ -8,14 +8,14 @@ module.exports () =
   model = {
     code = hello()
     selectedNode = nil
-    
+
     selectNode(node) =
       if (self.selectedNode)
         self.selectedNode.selected = false
-    
+
       if (node)
         node.selected = true
-    
+
       self.selectedPath = pathToNodeWithin (node, self.code)
       self.selectedNode = node
   }
@@ -64,11 +64,11 @@ module.exports () =
 
   e (node, name, args, ...) =
     selectable (node, name, args) @(a)
-      h.apply (plastiq, a)
+      h.apply (hyperdom, a)
 
   r (node, name, args, ...) =
     selectable (node, name, args) @(a)
-      h.rawHtml.apply (plastiq, a)
+      h.rawHtml.apply (hyperdom, a)
 
   terms = {
 
@@ -114,7 +114,7 @@ module.exports () =
                 me.body.splice (me.body.indexOf (node) + 1, 0, newNode)
                 model.selectNode (newNode)
             }
-          
+
           if (me.body.indexOf (node) > -1)
             {
               name = 'Insert Statement Before'
@@ -553,7 +553,7 @@ module.exports () =
           ]
       )
     )
-  
+
   {
     render = render
     model = model

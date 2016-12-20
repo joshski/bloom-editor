@@ -5,7 +5,7 @@ document.body.addEventListener "ontouchstart" @(event)
   event.preventDefault()
   event.stopPropagation()
 
-plastiq = require 'plastiq'
+hyperdom = require 'hyperdom'
 app = (require './app')()
 
-plastiq.attach (document.body, app.render, app.model)
+hyperdom.append (document.body, app.render, app.model)
